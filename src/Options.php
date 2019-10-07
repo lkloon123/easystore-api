@@ -8,7 +8,6 @@
 
 namespace EasyStore;
 
-
 use EasyStore\Exception\RequiredOptionMissingException;
 
 class Options
@@ -17,7 +16,7 @@ class Options
 
     public static function setOptions($options)
     {
-        self::$options = array_merge(self::defaultOptions(), $options);;
+        self::$options = array_merge(self::defaultOptions(), $options);
     }
 
     public static function getOptions($key = null)
@@ -27,7 +26,7 @@ class Options
         }
 
         if (!isset(self::$options[$key])) {
-            return null;
+            return;
         }
 
         return self::$options[$key];
@@ -37,7 +36,7 @@ class Options
     {
         return [
             'version' => '1.0',
-            'timeout' => 15
+            'timeout' => 15,
         ];
     }
 
@@ -58,6 +57,7 @@ class Options
         if ($len == 0) {
             return true;
         }
-        return (substr($string, -$len) === $endString);
+
+        return substr($string, -$len) === $endString;
     }
 }

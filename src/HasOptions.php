@@ -8,7 +8,6 @@
 
 namespace EasyStore;
 
-
 trait HasOptions
 {
     /**
@@ -21,11 +20,13 @@ trait HasOptions
 
     /**
      * @param mixed $options
+     *
      * @return HasOptions
      */
     public function setOptions($options)
     {
         Options::setOptions($options);
+
         return $this;
     }
 }

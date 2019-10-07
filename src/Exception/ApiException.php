@@ -8,8 +8,6 @@
 
 namespace EasyStore\Exception;
 
-
 class ApiException extends EasyStoreException
 {
-
 }

@@ -8,7 +8,6 @@
 
 namespace EasyStore\Http;
 
-
 class RequestBuilder
 {
     protected $endpoint;
@@ -26,11 +25,13 @@ class RequestBuilder
 
     /**
      * @param mixed $endpoint
+     *
      * @return RequestBuilder
      */
     public function setEndpoint($endpoint)
     {
         $this->endpoint = $endpoint;
+
         return $this;
     }
 
@@ -44,11 +45,13 @@ class RequestBuilder
 
     /**
      * @param mixed $method
+     *
      * @return RequestBuilder
      */
     public function setMethod($method)
     {
         $this->method = $method;
+
         return $this;
     }
 
@@ -62,11 +65,13 @@ class RequestBuilder
 
     /**
      * @param mixed $header
+     *
      * @return RequestBuilder
      */
     public function setHeader($header)
     {
         $this->header = $header;
+
         return $this;
     }
 
@@ -80,18 +85,20 @@ class RequestBuilder
 
     /**
      * @param mixed $body
+     *
      * @return RequestBuilder
      */
     public function setBody($body)
     {
         $this->body = $body;
+
         return $this;
     }
 
     public function build()
     {
         $options = [
-            'headers' => $this->header
+            'headers' => $this->header,
         ];
 
         if (strtolower($this->method) === 'get') {

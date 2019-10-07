@@ -8,7 +8,6 @@
 
 namespace EastStore\Test\Http;
 
-
 use EasyStore\Http\RequestBuilder;
 use PHPUnit\Framework\TestCase;
 
