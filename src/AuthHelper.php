@@ -8,7 +8,6 @@
 
 namespace EasyStore;
 
-
 use EasyStore\Exception\ApiException;
 use EasyStore\Exception\AuthException;
 use EasyStore\Exception\RequiredOptionMissingException;
@@ -34,9 +33,9 @@ class AuthHelper
         }
 
         return 'https://admin.easystore.co/oauth/authorize'
-            . '?app_id=' . $this->getOptions('client_id')
-            . '&scope=' . $this->getOptions('scopes')
-            . '&redirect_uri=' . $this->getOptions('redirect_uri');
+            .'?app_id='.$this->getOptions('client_id')
+            .'&scope='.$this->getOptions('scopes')
+            .'&redirect_uri='.$this->getOptions('redirect_uri');
     }
 
     public function verifyEasyStoreRequest()
@@ -57,6 +56,7 @@ class AuthHelper
         $message = implode('&', $message);
 
         $calculatedHmac = hash_hmac('sha256', $message, $this->getOptions('client_secret'));
+
         return hash_equals($calculatedHmac, $hmac);
     }
 
@@ -77,17 +77,18 @@ class AuthHelper
         try {
             $client = new GuzzleClient();
             $response = $client->post(
-                'https://' . $_GET['shop'] . '/api/' . $this->getOptions('version') . '/oauth/access_token',
+                'https://'.$_GET['shop'].'/api/'.$this->getOptions('version').'/oauth/access_token',
                 [
                     'json' => [
-                        'client_id' => $this->getOptions('client_id'),
+                        'client_id'     => $this->getOptions('client_id'),
                         'client_secret' => $this->getOptions('client_secret'),
-                        'code' => $_GET['code']
-                    ]
+                        'code'          => $_GET['code'],
+                    ],
                 ]
             );
 
             $response = json_decode($response->getBody(), true);
+
             return $response['access_token'];
         } catch (RequestException $ex) {
             if ($ex->hasResponse()) {

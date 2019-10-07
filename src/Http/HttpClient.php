@@ -8,12 +8,9 @@
 
 namespace EasyStore\Http;
 
-
-use EasyStore\AuthHelper;
 use EasyStore\Exception\ApiException;
 use EasyStore\Exception\RequiredOptionMissingException;
 use EasyStore\HasOptions;
-use EasyStore\Options;
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Exception\RequestException;
 
@@ -28,7 +25,7 @@ class HttpClient
         if (!$httpClient) {
             $httpClient = new GuzzleClient([
                 'base_uri' => $this->buildBaseUrl(),
-                'timeout' => $this->getOptions('timeout')
+                'timeout'  => $this->getOptions('timeout'),
             ]);
         }
 
@@ -37,7 +34,7 @@ class HttpClient
 
     protected function buildBaseUrl()
     {
-        return 'https://' . $this->getOptions('shop');
+        return 'https://'.$this->getOptions('shop');
     }
 
     public function makeRequest($endpoint, $method, $body = [], $header = [])
@@ -56,7 +53,7 @@ class HttpClient
         try {
             $response = $this->httpClient->request(
                 $request->getMethod(),
-                '/api/' . $this->getOptions('version') . $request->getEndpoint(),
+                '/api/'.$this->getOptions('version').$request->getEndpoint(),
                 $request->build()
             );
 

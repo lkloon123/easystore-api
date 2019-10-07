@@ -8,7 +8,6 @@
 
 namespace EasyStore;
 
-
 use EasyStore\Http\HttpClient;
 
 class Client

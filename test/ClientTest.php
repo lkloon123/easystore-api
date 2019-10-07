@@ -8,7 +8,6 @@
 
 namespace EastStore\Test;
 
-
 use EasyStore\Client;
 use EasyStore\Exception\RequiredOptionMissingException;
 use EasyStore\Http\HttpClient;

@@ -8,7 +8,6 @@
 
 namespace EastStore\Test;
 
-
 use EasyStore\Options;
 use PHPUnit\Framework\TestCase;
 

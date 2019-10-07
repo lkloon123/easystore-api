@@ -8,7 +8,6 @@
 
 namespace EastStore\Test;
 
-
 use EasyStore\AuthHelper;
 use EasyStore\Exception\RequiredOptionMissingException;
 use EasyStore\Options;
@@ -49,8 +48,8 @@ class AuthHelperTest extends TestCase
     public function testAbleToCreateAuthRequest()
     {
         Options::setOptions([
-            'client_id' => 'xxxxxxxxx',
-            'scopes' => 'order/create',
+            'client_id'    => 'xxxxxxxxx',
+            'scopes'       => 'order/create',
             'redirect_uri' => 'http://example.com',
         ]);
 
