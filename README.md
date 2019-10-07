@@ -1,7 +1,7 @@
 # Easystore Api
 [![Latest Stable Version](https://img.shields.io/packagist/v/neoson/easystore-api.svg)](https://packagist.org/packages/neoson/easystore-api)
 [![Build Status](https://img.shields.io/travis/com/neoson/easystore-api.svg)](https://travis-ci.com/neoson/easystore-api)
-[![StyleCI](https://github.styleci.io/repos/213283970/shield?branch=master)](https://github.styleci.io/repos/213283970)
+[![StyleCI](https://github.styleci.io/repos/213284724/shield?branch=master)](https://github.styleci.io/repos/213284724)
 [![License](https://img.shields.io/packagist/l/neoson/easystore-api.svg)](https://packagist.org/packages/neoson/easystore-api)
 [![Total Downloads](https://img.shields.io/packagist/dt/neoson/easystore-api.svg)](https://packagist.org/packages/neoson/easystore-api)
 
